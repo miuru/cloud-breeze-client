@@ -9,7 +9,13 @@ const slides = [
     src: '/images/ninearch.png',
     alt: 'Blue train crossing the Nine Arch Bridge in Ella',
     eyebrow: 'Ella, Sri Lanka',
-    title: 'Ella Cloud Breeze \n Villa',
+    title: (
+      <>
+        Ella Cloud Breeze
+        <br />
+        Villa
+      </>
+    ),
     text: 'A refined mountain retreat, surrounded by nature and inspired by Ella.'
   },
   {
@@ -76,5 +82,8 @@ const slides = [
   text: 'Take an easy hike through Ella’s green hills and enjoy breathtaking panoramic views across the surrounding mountains and valleys.'
 },
 ];
-export function EllaHero(){const [active,setActive]=useState(0);useEffect(()=>{const id=window.setInterval(()=>setActive(v=>(v+1)%slides.length),5000);return()=>window.clearInterval(id)},[]);const slide=slides[active];return <section className="relative flex min-h-[78vh] items-center overflow-hidden bg-ink text-white"><div className="absolute inset-0">{slides.map((item,i)=><div key={item.src} className={`absolute inset-0 transition-opacity duration-[2200ms] ease-in-out ${i===active?'z-[1] opacity-100':'z-0 opacity-0'}`}><HeroImage src={item.src} alt={i===active?item.alt:''} active={i===active} priority={i<5}/></div>)}</div><div className="absolute inset-0 z-[2] bg-gradient-to-r from-ink/95 via-ink/65 to-ink/10"/><div className="container relative z-[3] py-24"><div key={active} className="hero-copy-in max-w-3xl"><p className="eyebrow text-sand">{slide.eyebrow}</p><h1 className="mt-4 text-5xl leading-[1.05] sm:text-7xl">{slide.title}</h1><p className="mt-6 max-w-lg text-lg leading-8 text-white/90">{slide.text}</p><div className="mt-9 flex flex-wrap gap-3"><Link href="/book" className="rounded-full bg-sand px-5 py-3 text-sm font-bold text-ink transition hover:bg-white">Check Availability</Link><Link href="/gallery" className="rounded-full border border-white/70 px-5 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-ink">View Gallery</Link></div></div><div className="mt-12 grid w-full max-w-md grid-cols-5 gap-2 rounded-2xl border border-white/20 bg-black/15 p-3 sm:gap-3">{slides.map((item,i)=><button key={item.src} onClick={()=>setActive(i)} aria-label={`Show ${item.alt}`} aria-pressed={active===i} className={`relative aspect-[4/3] min-w-0 overflow-hidden rounded-lg border transition-opacity duration-500 ${active===i?'scale-105 border-sand shadow-lg shadow-sand/20':'border-white/30 opacity-75 hover:scale-105 hover:opacity-100'}`}><HeroImage src={item.src} alt="" thumbnail/>{active===i&&<span className="absolute inset-x-0 bottom-0 h-1 overflow-hidden bg-white/30"><span key={active} className="thumbnail-timer block h-full origin-left bg-sand"/></span>}</button>)}</div></div></section>}
+export function EllaHero(){const [active,setActive]=useState(0);useEffect(()=>{const id=window.setInterval(()=>setActive(v=>(v+1)%slides.length),5000);return()=>window.clearInterval(id)},[]);const slide=slides[active];return <section className="relative flex h-[clamp(520px,78vh,760px)] items-center overflow-hidden bg-ink text-white"><div className="absolute inset-0">{slides.map((item,i)=><div key={item.src} className={`absolute inset-0 transition-opacity duration-[2200ms] ease-in-out ${i===active?'z-[1] opacity-100':'z-0 opacity-0'}`}><HeroImage src={item.src} alt={i===active?item.alt:''} active={i===active} priority={i<5}/></div>)}</div><div className="absolute inset-0 z-[2] bg-gradient-to-r from-ink/95 via-ink/65 to-ink/10"/><div className="container relative z-[3] py-24"><div key={active} className="hero-copy-in max-w-3xl"><p className="eyebrow text-sand">{slide.eyebrow}</p><h1 className="mt-4 text-5xl leading-[1.05] sm:text-7xl">{slide.title}</h1><p className="mt-6 max-w-lg text-lg leading-8 text-white/90">{slide.text}</p><div className="mt-9 flex flex-wrap gap-3"><Link href="/book" className="rounded-full bg-sand px-5 py-3 text-sm font-bold text-ink transition hover:bg-white">Check Availability</Link><Link href="/gallery" className="rounded-full border border-white/70 px-5 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-ink">View Gallery</Link></div></div><div className="mt-12 grid w-full max-w-md grid-cols-5 gap-2 rounded-2xl border border-white/20 bg-black/15 p-3 sm:gap-3">{slides.map((item,i)=><button key={item.src} onClick={()=>setActive(i)} aria-label={`Show ${item.alt}`} aria-pressed={active===i} className={`relative aspect-[4/3] min-w-0 overflow-hidden rounded-lg border transition-opacity duration-500 ${active===i?'scale-105 border-sand shadow-lg shadow-sand/20':'border-white/30 opacity-75 hover:scale-105 hover:opacity-100'}`}><HeroImage src={item.src} alt="" thumbnail/>{active===i&&<span className="absolute inset-x-0 bottom-0 h-1 overflow-hidden bg-white/30"><span key={active} className="thumbnail-timer block h-full origin-left bg-sand"/></span>}</button>)}</div></div></section>}
+
+
+
 

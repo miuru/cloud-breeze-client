@@ -1,4 +1,4 @@
 import Image from 'next/image';
 import { Container, SectionHeading } from './ui';
-const bathrooms = ['1','2','3','4','5','6'];
+const bathrooms = ['4','1','6'];
 export function BathroomGallery() { return <section className="section bg-white"><Container><SectionHeading eyebrow="Fresh and considered" title="Bathrooms designed for comfort" text="Bright, modern bathrooms with reliable hot water and the details you need to refresh after a day in the hills." /><div className="grid grid-cols-2 gap-3 sm:grid-cols-3">{bathrooms.map(id => <div key={id} className="group relative aspect-[4/3] overflow-hidden rounded-2xl"><Image src={`/images/bathroom/bathroom${id}.jpg`} alt={`Cloud Breeze bathroom ${id}`} fill loading="lazy" sizes="(max-width:640px) 50vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" /></div>)}</div></Container></section>; }
