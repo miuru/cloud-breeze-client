@@ -31,3 +31,9 @@ button,input,select,textarea { font: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+@media (max-width: 767px) { .hero-shell { min-height: 0; height: 680px; align-items: flex-end; } .hero-shell .hero-content { padding-top: 7rem; padding-bottom: 1.5rem; } .hero-shell h1 { font-size: clamp(2.5rem, 11vw, 4rem); line-height: 1.02; } .hero-shell .hero-copy-in > p:not(.eyebrow) { font-size: .98rem; line-height: 1.55; } .hero-thumbs { margin-top: 1.25rem; max-width: 100%; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .35rem; padding: .5rem; } .hero-thumbs button { aspect-ratio: 1.25; } .book-page .container { width: min(100% - 1.5rem, 42rem); } .book-page .rounded-2xl { border-radius: 1.25rem; } .book-page form button { width: 100%; } .book-page .flex.flex-wrap { flex-direction: column; } .book-page .flex.flex-wrap > a, .book-page .flex.flex-wrap > * { width: 100%; margin-left: 0; } }
+
+
+@media (max-width: 767px) { .hero-thumbs button:nth-child(n+6) { display: none; } }
+
